@@ -45,7 +45,20 @@
         <p>Premium Domain for Sale</p>
     </header>
     <main>
-        <p>Interested in purchasing this domain? Contact us at <a href="mailto:mail@denisleblanc.com">mail@denisleblanc.com</a></p>
+        <p>Interested in purchasing this domain? Contact us <a href="mailto:" class="email" data-user="mail" data-domain="denisleblanc.com">here</a>.</p>
+        
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        var emailLinks = document.querySelectorAll('.email');
+        emailLinks.forEach(function(link) {
+            var user = link.getAttribute('data-user');
+            var domain = link.getAttribute('data-domain');
+            var email = user + '@' + domain;
+            link.href = 'mailto:' + email;
+            link.textContent = email;
+        });
+    });
+</script>
     </main>
     <footer>
         <p>&copy; 2020 BC Rideshare</p>
